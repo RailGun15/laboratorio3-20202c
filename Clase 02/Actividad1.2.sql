@@ -23,7 +23,7 @@ CREATE TABLE Idiomas (
 
 CREATE TABLE TipoIdiomas (
 	ID SMALLINT NOT NULL PRIMARY KEY IDENTITY(1, 1),
-	Idioma VARCHAR(50) NOT NULL CHECK(Idioma = 'Audio' OR Idioma = 'Subtitulo'),
+	Tipo VARCHAR(50) NOT NULL CHECK(Tipo = 'Audio' OR Tipo = 'Subtitulo'),
 );
 
 CREATE TABLE AudioSubtitulo (
@@ -35,6 +35,8 @@ CREATE TABLE AudioSubtitulo (
       FOREIGN KEY (IDCurso) REFERENCES Cursos (ID),
 		CONSTRAINT FK_audio
       FOREIGN KEY (IDIdioma) REFERENCES Idiomas (ID),
+		CONSTRAINT FK_tipo
+      FOREIGN KEY (Tipo) REFERENCES TipoIdiomas (ID),
 );
 
 
