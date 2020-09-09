@@ -63,7 +63,7 @@ FROM Datos_Personales D
 	JOIN Instructores_x_Curso IxC ON IxC.IDUsuario = U.ID
 
 -- 11 Listado con nombre y apellido de todos los usuarios que hayan cursado algún curso cuya categoría sea 'Historia'.
-SELECT DISTINCT D.Nombres,D.Apellidos,C.Nombre
+SELECT DISTINCT D.Apellidos,D.Nombres,C.Nombre
 FROM Datos_Personales D
 	JOIN Usuarios U ON U.ID = D.ID
 	JOIN Inscripciones I ON I.IDUsuario = U.ID
